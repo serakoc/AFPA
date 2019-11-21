@@ -27,31 +27,42 @@
     <img src="jarditou_html_zip/images/promotion.jpg" alt="promotion" title="promotion"/>
 
    <form action="http://bienvu.net/script.php" method="POST" id="formulaire_contact">
-        * Ces zones sont obligatoires<br/>
+        <p>* Ces zones sont obligatoires</p>
         <fieldset>
             <legend>Vos coordonnées</legend>
-            Votre nom* : <input type="text" name="Votre nom* : " required/><br/>
-            Votre prénom* : <input type="text" name="Votre prénom* : " required/><br/>
+            <label for="nom">Votre nom* :</label>
+            <input type="text" name="Votre nom* : " required id="nom"/><br/>
+            <label for="prenom">Votre prénom* : </label>
+            <input type="text" name="Votre prénom* : " required id="prenom"/><br/>
             <p>Sexe* :</p>
-            Féminin : <input type="radio" name="Sexe" value="Féminin" required/>
-            Masculin : <input type="radio" name="Sexe" value="Masculin" required/><br/>
-            Date Naissance* : <input type="date" name="Date Naissance" required/><br/>
-            Code postal : <input type="text" name="postal"/><br/>
-            Adresse : <input type="text" name="adresse"/><br/>
-            Ville : <input type="text" name="ville"/><br/>
-            Email* : <input type="text" name="email" required placeholder="email"/><br/>
+            <label for="fem">Féminin : </label>
+            <input type="radio" name="Sexe" value="Féminin" required id="fem"/>
+            <label for="mas">Masculin : </label>
+            <input type="radio" name="Sexe" value="Masculin" required id="mas"/><br/>
+            <label for="naissance">Date Naissance* :</label>
+             <input type="date" name="Date Naissance" required id="naissance"/><br/>
+            <label for="postal">Code postal : </label>
+            <input type="text" name="postal" id="postal"/><br/>
+            <label for="adresse">Adresse : </label>
+            <input type="text" name="adresse" id="adresse"/><br/>
+            <label for="ville">Ville :</label> 
+            <input type="text" name="ville" id="ville"/><br/>
+            <label for="email">Email* : </label>
+            <input type="text" name="email" required placeholder="email" id="email"/><br/>
         </fieldset>
         <fieldset>
             <legend>Votre demande</legend>
-            Sujet* : <select name="sujet" required>
+            <label for="sujet">
+                Sujet* : <select name="sujet" required id="sujet">
                         <option value="" selected> - </option>    
                         <option value="1"> option 1 </option>
                         <option value="2"> option 2 </option>
                      </select><br/>
-            Votre demande* : <textarea name="demande" required></textarea><br/>
+            <label for="demande">Votre demande* : <textarea name="demande" required id="demande"></textarea><br/>
         </fieldset>
-        <input type="checkbox" name="confirmation" required>
-        J'accepte le traitement informatique de ce forumlaire.<br/>
+        <input type="checkbox" name="confirmation" required id="confirmation">
+        <label for="confirmation">J'accepte le traitement informatique de ce forumlaire.</label>
+        <br/>
         <input type="submit" value="Envoyer"/>
         <input type="reset" value="Annuler"/>
    </form>
