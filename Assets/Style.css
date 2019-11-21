@@ -1,11 +1,11 @@
 header
 {
     display : flex;
+    justify-content: center;
 }
 header p 
 {
-   margin-left: 30%;
-   font-size: 24px;
+    font-size: 24px;
 }
 nav 
 {
@@ -50,10 +50,6 @@ table, tr, td, th, thead
 }
 @media all and (max-width: 768px)
 {
-    ul
-    {
-        display : block;
-    }
     h1
     {
         font-size : 20px;
@@ -66,4 +62,36 @@ table, tr, td, th, thead
     {
         font-size : 10px;
     }
+    ul
+    {
+        display:flex;
+        flex-direction: column;
+        list-style-type: none; 
+        justify-content: center;
+        margin-right : 10%;
+    }
+    li 
+    {
+        display:flex;
+        justify-content: center;
+    }
+  
+    #vide
+    {
+        
+        display:none;
+    }
+
+}
+@media all and (max-width : 992px)
+{
+    #vide
+    {
+        flex : 1;
+    }
+    #accueil
+    {
+        flex : 1;
+    }
+
 }
