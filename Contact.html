@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="jarditou_html_zip/images/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" width="225" height="80" />
+        <p>TOUT LE JARDIN</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="Accueil.html" title="Accueil">Accueil</a></li>
+            <li><a href="Tableau.html" title="Tableau">Tableau</a></li>
+            <li><a href="Contact.html" title="Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <img src="jarditou_html_zip/images/promotion.jpg" alt="promotion" title="promotion"/>
+
+   <form action="http://bienvu.net/script.php" method="POST" id="formulaire_contact">
+        * Ces zones sont obligatoires<br/>
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+            Votre nom* : <input type="text" name="Votre nom* : " required/><br/>
+            Votre prénom* : <input type="text" name="Votre prénom* : " required/><br/>
+            <p>Sexe* :</p>
+            Féminin : <input type="radio" name="Sexe" value="Féminin" required/>
+            Masculin : <input type="radio" name="Sexe" value="Masculin" required/><br/>
+            Date Naissance* : <input type="date" name="Date Naissance" required/><br/>
+            Code postal : <input type="text" name="postal"/><br/>
+            Adresse : <input type="text" name="adresse"/><br/>
+            Ville : <input type="text" name="ville"/><br/>
+            Email* : <input type="text" name="email" required placeholder="email"/><br/>
+        </fieldset>
+        <fieldset>
+            <legend>Votre demande</legend>
+            Sujet* : <select name="sujet" required>
+                        <option value="" selected> - </option>    
+                        <option value="1"> option 1 </option>
+                        <option value="2"> option 2 </option>
+                     </select><br/>
+            Votre demande* : <textarea name="demande" required></textarea><br/>
+        </fieldset>
+        <input type="checkbox" name="confirmation" required>
+        J'accepte le traitement informatique de ce forumlaire.<br/>
+        <input type="submit" value="Envoyer"/>
+        <input type="reset" value="Annuler"/>
+   </form>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="Mentions légales.html" title="Mentions légales">Mentions légales</a></li>
+                <li><a href="Horaires.html" title="Horaires">Horaires</a></li>
+                <li><a href="Plan du site.html" title="Plan du site">Plan du site</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
