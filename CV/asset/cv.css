@@ -1,0 +1,75 @@
+*
+{
+    overflow: auto;
+    font-family: Arial;
+}
+
+h1
+{
+    display: flex;
+    justify-content: center;
+}
+header
+{
+    display : flex;
+    justify-content: space-between;
+    overflow: visible;
+}
+#principale
+{
+    display:flex;
+}
+.principale
+{
+    display : flex;
+    width : 33.333%;
+    flex-direction: column;
+}
+ul
+{
+    list-style-type: none;
+    padding:0;
+}
+h3
+{
+    display:flex;
+    justify-content: center;
+}
+img:hover
+{
+    transform: scale(1.1,1.1);
+}
+
+@media all and (max-width:768px)
+{
+    #adresse
+    {
+        display:none;
+    }
+    header
+    {
+        justify-content: center;
+    }
+    #principale
+    {
+        flex-direction: column;
+    }
+    .principale
+    {
+        width:100%;
+    }
+    *
+    {
+        font-size : 12px;
+    }
+    h1 
+    {
+        font-size : 25px;
+    }
+    h3
+    {
+        font-size : 15px;
+    }
+
+}
+

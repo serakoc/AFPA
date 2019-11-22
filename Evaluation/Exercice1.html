@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var PU=10;
+        var quantite=10;
+        var PAP;
+        var PORT = 0;
+        var REM;
+        var TOT = PU*quantite;
+        console.log(TOT);
+        if(TOT>500)
+        {
+            PORT = 0;
+        }
+        else 
+        {
+            //PORT = TOT*0.02;
+            if(PORT < 6)
+            {
+                PORT = 6;
+            }
+        }
+        console.log(PORT);
+        if(TOT>=100 && TOT<=200)
+        {
+            REM = 0.95;
+        }
+        else if(TOT>200)
+        {
+            REM = 0.9;
+        }
+        console.log(REM);
+        PAP = (TOT + PORT)*REM;
+        console.log(PAP);
+    </script>
+</body>
+</html>
