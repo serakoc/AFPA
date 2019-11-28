@@ -5,27 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="Assets/Style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Accueil</title>
 </head>
 
 <body>
 
-    <header>
-        <a href="index.html" title="logo accueil"><img src="jarditou_html_zip/images/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" class="img-fluid" /></a>
-        <p class="text-center">TOUT LE JARDIN</p>
-    </header>
+        <header>
+                <a href="index.html" title="logo accueil"  class=" col-md-6">
+                    <img src="jarditou_html_zip/images/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" class=" col-md-6"/>
+                </a>
+                <p class="text-center">TOUT LE JARDIN</p>
+            </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html" title="Accueil">Accueil</a></li>
-            <li><a href="tableau.html" title="Tableau">Tableau</a></li>
-            <li><a href="Contact.html" title="Contact">Contact</a></li>
-        </ul>
-    </nav>
+    
+    <div id="navb" class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+              <div class="bg-light p-4">
+                    <nav>
+                            <ul>
+                                <a class="color" href="index.html" title="Accueil"><li class="burger">Accueil</li></a>
+                                <a class="color" href="tableau.html" title="Tableau"><li class="burger">Tableau</li></a>
+                                <a class="color" href="Contact.html" title="Contact"><li class="burger">Contact</li></a>
+                            </ul>
+                        </nav>
+              </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </nav>
+            </div>
+            <nav id="burg">
+                <ul>
+                    <li><a href="index.html" title="Accueil">Accueil</a></li>
+                    <li><a href="tableau.html" title="Tableau">Tableau</a></li>
+                    <li><a href="Contact.html" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
 
-    <img src="jarditou_html_zip/images/promotion.jpg" alt="promotion" title="promotion" class="img-fluid"/>
+            <img src="jarditou_html_zip/images/promotion.jpg" alt="promotion" title="promotion" id="promotion" class="img-fluid"/>
 
     <div id="aside">
         <section class="col-lg-8" id="accueil">
@@ -50,7 +72,7 @@
                     <p>Vous pouvez bien sûr contacter pour de plus amples informations ou pour une demande d’intervention. Vous souhaitez un devis ? Nous vous le réalisons gratuitement.</p>
             </div>
         </section>
-        <section id="vide" class="col-lg-4">
+        <section id="vide" class="col-lg-4  col-sm-6 col-xs-6">
             <p>  [COLONNE VIDE GENRE]</p>
         </section>
     </div>

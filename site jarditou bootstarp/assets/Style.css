@@ -1,12 +1,9 @@
-header
-{
-    display : flex;
-    justify-content: center;
-}
 header p 
 {
     font-size: 24px;
+    text-shadow: 3px -2px grey;
 }
+
 nav 
 {
     background: black;
@@ -33,7 +30,6 @@ li
 }
 a
 {
-    display: flex;
     color: white;
 }
 #colonne_droite
@@ -46,8 +42,17 @@ hr{
 }
 table, tr, td, th, thead
 { 
-   border: 1px solid grey;
+   border: 3px solid black;
 }
+#promotion
+{
+    width: 100%;
+}
+fieldset
+{
+    justify-content: center;
+}
+
 @media all and (max-width: 768px)
 {
     h1

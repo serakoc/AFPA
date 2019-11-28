@@ -1,0 +1,142 @@
+header{
+    margin:1%;
+    align-self : flex-end;
+}
+header p 
+{
+    font-size: 24px;
+    text-shadow: 3px -2px grey;
+    align-self : flex-end;
+}
+
+ul{
+display:flex;
+flex-direction: column;
+list-style-type: none; 
+justify-content: center;
+width:100%;
+}
+
+li 
+{
+display:flex;
+justify-content: center;
+padding: 5px;
+margin-left:-40px;
+padding-left:40px;
+background : black;
+
+}
+
+.burger
+{
+background: grey;
+margin : 5px;
+border-radius : 5px;
+box-shadow : 4px -4px black;
+}
+
+.color
+{
+   color: black;
+}
+a
+{
+    color:white;
+    margin-left: -40px;
+}
+#aside
+{
+    display : flex;
+}
+#vide
+{
+    width: 300px;
+    background: grey;
+}
+
+#colonne_droite
+{
+    width: 100px;
+}
+hr{
+    opacity: 0.5;
+
+}
+table, tr, td, th, thead
+{ 
+   border: 3px solid black;
+}
+#promotion
+{
+    width: 100%;
+}
+
+#formulaire_contact
+{
+    max-width: 400px;
+}
+#burg
+{
+    display:none;
+}
+
+@media all and (max-width: 768px)
+{
+    h1
+    {
+        font-size : 20px;
+    }
+    strong
+    {
+        font-size : 15px;
+    }
+    p
+    {
+        font-size : 10px;
+    }
+    ul
+    {
+        display:flex;
+        flex-direction: column;
+        list-style-type: none; 
+        justify-content: center;
+        width:100%;
+    }
+    li 
+    {
+        display:flex;
+        justify-content: center;
+    }
+    #vide
+    {
+        display:none;
+    }
+    #navb
+    {
+        display:none;
+    }
+    #burg
+    {
+        display:flex;
+    }
+    #logo
+    {
+        width : 100%;
+    }
+}
+@media all and (min-width: 768px)
+{
+    header
+    {
+        display:flex;
+    }
+    #logo
+    {
+        width: auto;
+    }
+    header p
+    {
+        height: 100%;
+    }
+}
