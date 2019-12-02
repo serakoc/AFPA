@@ -8,8 +8,8 @@
 </head>
 <body>
     <script>
-        var PU=10;
-        var quantite=10;
+        var PU=prompt("prix unitaire");;
+        var quantite=prompt("quantité");
         var PAP;
         var PORT = 0;
         var REM;
@@ -39,6 +39,8 @@
         console.log(REM);
         PAP = (TOT + PORT)*REM;
         console.log(PAP);
+        document.write(PAP);
+        alert(PAP);
     </script>
 </body>
 </html>
