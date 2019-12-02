@@ -47,15 +47,15 @@
             </nav>
     <img src="jarditou_html_zip/images/promotion.jpg" alt="promotion" title="promotion" id="promotion" class="img-fluid"/>
 
-   <form action="http://bienvu.net/script.php" method="POST" id="formulaire_contact" class="container" onSubmit="return verification();">
+   <form action="http://bienvu.net/script.php" method="POST" id="formulaire_contact" class="container">
         <p>* Ces zones sont obligatoires</p>
         <fieldset>
             <legend>Vos coordonnées</legend>
             <div class="form-group">
                 <label for="nom">Votre nom* :</label>
-                <input class="form-control" type="text" name="Votre nom* : " required id="nom"/><br/>
+                <input class="form-control" type="text" name="Votre nom* : " required id="nom"/><span id="missNom"></span><br/>
                 <label for="prenom">Votre prénom* : </label>
-                <input class="form-control" type="text" name="Votre prénom* : " required id="prenom"/><br/>
+                <input class="form-control" type="text" name="Votre prénom* : " required id="prenom"/><span id="missPrenom"></span<br/>
                 <p>Sexe* :</p>
                 <div class="form-check">
                     <input class="form-check-input"type="radio" name="Sexe" value="Féminin" required id="fem"/>
@@ -74,7 +74,7 @@
                 <label for="ville">Ville :</label> 
                 <input class="form-control"type="text" name="ville" id="ville"/><br/>
                 <label for="email">Email* : </label>
-                <input class="form-control"type="text" name="email" required placeholder="email" id="email"/><br/>
+                <input class="form-control"type="text" name="email" required placeholder="email" id="email"/> <span id="missEmail"></span><br/>
             </div>
         </fieldset>
         <fieldset>
