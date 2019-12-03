@@ -1,15 +1,15 @@
 
 var bouton = document.body.getElementById('bouton');
+var nom = document.getElementById('nom');
+var prenom = document.getElementById('prenom');
+var naissance = document.getElementById('naissance');
+var email = document.getElementById('email');
 
-bouton.addEventListener('click',verification());
+bouton.addEventListener('click', verification);
 
 function verification(event)
 {
-    var nom = document.getElementById('nom');
-    var prenom = document.getElementById('prenom');
-    var naissance = document.getElementById('naissance');
-    var email = document.getElementById('email');
-
+    
     var regexNom = new RegExp(/^[a-zA-Z]+$/);
     var regexPrenom =  new RegExp(/^[a-zA-Z]+$/);
     var regexEmail = new RegExp(/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/);
@@ -20,22 +20,18 @@ function verification(event)
         event.preventDefault();
         var paraErreurNom = document.body.getElementById('missNom');
         paraErreurNom.textContent = "Nom : Entrez uniquement des caractères alphabétiques";
-        alert('ok');
-        console.log("nom");
     }
     if(!regexPrenom.test(prenom.value))
     {
         event.preventDefault();
         var paraErreurPrenom = document.body.getElementById('missPrenom');
         paraErreurPrenom.textContent="Prenom : uniquement des caractères alphabétiques";
-        console.log("prenom");
     }
     if(!regexEmail.test(email.value))
     {
         event.preventDefault();
         let paraErreurEmail = document.body.getElementById('missEmail');
         paraErreurEmail.textContent = "email : format exemple0@email.com";
-        console.log("email");
     }
     /*if(!regexNaissance.test(naissance.value))
     {

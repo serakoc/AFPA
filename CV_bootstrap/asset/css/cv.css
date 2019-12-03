@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Alatsi|Roboto+Mono&display=swap');
+
+html
+{
+    scroll-behavior: smooth;
+    font-family: 'Roboto Mono', monospace;
+}
+h3
+{
+    border : 3px solid black;
+}
+body 
+{
+    background: none repeat scroll 0 0 white;
+}
+.italique
+{
+    font-style:italic;
+}
+header
+{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    white-space: pre-line;
+    position: fixed;
+    background: linear-gradient(white,white);
+    top:0;
+    bottom:0;
+    font-family: 'Alatsi', sans-serif;
+    height : 100vh;
+    width : 100vw;
+}
+
+.content
+{
+    min-height: 100vh;
+    font-size: 10pt;
+    padding-left : 100px;
+    margin-right : -500px;
+    margin-top : 10px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.swip
+{
+    display:flex;
+    justify-content: space-between;
+}
+
+#burger_lien
+{
+    padding-left : 25px;
+}
+.icone_montant
+{
+  justify-content: end;
+}
+
+.logo_scroll
+{
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom: 20px; 
+}
+
+.lien_ancrage
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding : 5px;
+}
+
+.lien_ancrage:hover
+{
+   text-shadow: 2px 2px 5px grey;
+}
+
+p
+{
+    font-size:15px;
+    font-weight:bold;
+}    
+
+#adresse_photo
+{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+}
+
+#logo
+{
+    float:right;
+    border-radius:100px;
+}
+
+p,legend,fieldset,h3,a,img{
+    color:black;
+}
+
+.progress 
+{
+    padding: 10px;
+    background: #F06;
+    
+}
+.progress-bar 
+{
+background: #777;
+text-align: right;       
+}
+.progress span 
+{
+color:black;
+}
+@media all and (max-width: 720px)
+{
+    .content{
+    margin-left : 0px;
+    min-height : 100px;
+    padding-left : 0px;
+    margin-right : 0px;
+    }
+    header
+    {
+        display:none;
+    }
+}
+@media all and (max-width: 550px)
+{
+    .content{
+    margin-left : 0px;
+    min-height : 100px;
+    padding-left : 0px;
+    margin-right : 0px;
+}
+}
