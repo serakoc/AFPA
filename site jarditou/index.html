@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<!-- head + titre-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Assets/Style.css">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="Assets/cs/Style.css">
+    <title>Contact</title>
 </head>
 
 <body>
-
-        <header>
-                <a href="index.html" title="logo accueil"  class=" col-md-6">
-                    <img src="jarditou_html_zip/images/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" class=" col-md-6"/>
-                </a>
-                <p class="text-center">TOUT LE JARDIN</p>
-            </header>
-
-    
+<!-- header contenant logo et phrase d'accroche (bootstrap) -->
+    <header>
+        <a href="index.html" title="logo accueil"  class=" col-md-6">
+            <img src="Assets/img/images/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" class=" col-md-6"/>
+        </a>
+        <p class="text-center">TOUT LE JARDIN</p>
+    </header>
+ 
+<!-- menu burger désactiver < 768px -->
     <div id="navb" class="pos-f-t">
-            <div class="collapse" id="navbarToggleExternalContent">
-              <div class="bg-light p-4">
-                    <nav>
-                            <ul>
-                                <a class="color" href="index.html" title="Accueil"><li class="burger">Accueil</li></a>
-                                <a class="color" href="tableau.html" title="Tableau"><li class="burger">Tableau</li></a>
-                                <a class="color" href="Contact.html" title="Contact"><li class="burger">Contact</li></a>
-                            </ul>
-                        </nav>
-              </div>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-light p-4">
+                <nav>
+                    <ul>
+                        <a class="color" href="index.html" title="Accueil"><li class="burger">Accueil</li></a>
+                        <a class="color" href="tableau.html" title="Tableau"><li class="burger">Tableau</li></a>
+                        <a class="color" href="Contact.html" title="Contact"><li class="burger">Contact</li></a>
+                    </ul>
+                </nav>
             </div>
-            <nav class="navbar navbar-dark bg-dark">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </nav>
-            </div>
-            <nav id="burg">
-                <ul>
-                    <li><a href="index.html" title="Accueil">Accueil</a></li>
-                    <li><a href="tableau.html" title="Tableau">Tableau</a></li>
-                    <li><a href="Contact.html" title="Contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <img src="jarditou_html_zip/images/promotion.jpg" alt="promotion" title="promotion" id="promotion" class="img-fluid"/>
-
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        </div>
+<!-- menu "" burger "" > 768px -->
+        <nav id="burg">
+            <ul>
+                <li><a href="index.html" title="Accueil">Accueil</a></li>
+                <li><a href="tableau.html" title="Tableau">Tableau</a></li>
+                <li><a href="Contact.html" title="Contact">Contact</a></li>
+            </ul>
+        </nav>
+<!-- image de promotion-->
+    <img src="Assets/img/images/promotion.jpg" alt="promotion" title="promotion" id="promotion" class="img-fluid"/>
+    <!-- div avec d aside permettant la manipulation via le fichier css -->
     <div id="aside">
         <section class="col-lg-8" id="accueil">
             <h1>Accueil</h1>
@@ -72,6 +73,7 @@
                     <p>Vous pouvez bien sûr contacter pour de plus amples informations ou pour une demande d’intervention. Vous souhaitez un devis ? Nous vous le réalisons gratuitement.</p>
             </div>
         </section>
+        <!-- colonne vide géré avec bottstrap a droite de l'id aside-->
         <section id="vide" class="col-lg-4  col-sm-6 col-xs-6">
             <p>  [COLONNE VIDE GENRE]</p>
         </section>
@@ -86,6 +88,7 @@
             </ul>
         </nav>
     </footer>
+    <!-- 3script bootstrap servant a son fonctionnement, popper est facultatif-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

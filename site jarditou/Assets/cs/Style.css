@@ -1,15 +1,17 @@
 header{
     margin:1%;
-    align-self : flex-end;
 }
+
 header p 
 {
     font-size: 24px;
-    text-shadow: 3px -2px grey;
-    align-self : flex-end;
+    text-shadow: 3px -2px grey; 
+    align-self : flex-end;/* permet l'alignement sur la ligne la plus basse du conteneur 
+                            ce qui donne un effet centrer au message d'accroche*/
 }
 
-ul{
+ul{/* display:flex permet la manipulation de conteneur, justify content permet son centrage horizontal
+     ul étant affecter au menu burger ainsi qu'au pied de page*/
 display:flex;
 flex-direction: column;
 list-style-type: none; 
@@ -81,7 +83,8 @@ table, tr, td, th, thead
     display:none;
 }
 
-@media all and (max-width: 768px)
+@media all and (max-width: 768px) /* display:none le menu burger bottstrap pour laisser place au menu burger en css,
+                                    modifie aussi l'agencement du header*/
 {
     h1
     {
@@ -125,7 +128,7 @@ table, tr, td, th, thead
         width : 100%;
     }
 }
-@media all and (min-width: 768px)
+@media all and (min-width: 768px) /* permet d'aligner logo et prase d'accroche sur la meme ligne*/
 {
     header
     {
