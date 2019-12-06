@@ -32,8 +32,11 @@
     //si l'age est supérieur a 100 alors nous arretons la boucle, le choix d'un do while a été choisis pour compté le centenaire.
     while(age < 100)
     //on affiche ensuite cote a cote les valeur pour le nombre d'age saisie correspondant a chaque tranche d'age
-    document.write(vingt + " ");
-    document.write(trente + " ");
-    document.write(quarante + " ");
-    document.write(centenaire + " ");
+
+    document.write("Bonjour ! :)</br>");
+	
+    document.write("Alors actuellement nous avons noté grace a votre saisie : </br>");
+    document.write(vingt + " : jeunes ! (age inferieur a 20 ans)</br>");
+    document.write((trente + quarante) + " : adulte(s) et vielle(s) personne(s) (supérieur à 20 ans) <br>");
+    document.write("Incroyable ! (ou pas ?) nous avons : " +centenaire + " centenaire(s) !");
  
