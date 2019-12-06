@@ -86,5 +86,4 @@ GRANT ALL ON papyrus.* TO util1;
 GRANT SELECT ON papyrus.* TO util2;
 GRANT SELECT ON papyrus.Fournis TO util3;
 
-/*
-CREATE UNIQUE INDEX index_numfou ON Entcom(NUMFOU);*/
+CREATE UNIQUE INDEX index_numfou ON Entcom(NUMFOU);
