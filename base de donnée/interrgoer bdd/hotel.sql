@@ -137,14 +137,14 @@ INSERT INTO client (cli_nom, cli_prenom, cli_adresse, cli_ville) VALUES ('Claypo
 INSERT INTO client (cli_nom, cli_prenom, cli_adresse, cli_ville) VALUES ('Squire', 'Chris', '', 'Londre');
 INSERT INTO client (cli_nom, cli_prenom, cli_adresse, cli_ville) VALUES ('Wood', 'Ronnie', '', 'Londre');
 
-INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (1, 1, '2017-01-10', '2017-07-01', '2017-07-15', 2400, 800);
-INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (2, 2, '2017-01-10', '2017-07-01', '2017-07-15', 3400, 100);
+INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (1, 1, '2017-01-10', '2017-06-01', '2017-07-15', 2400, 800);
+INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (1, 2, '2017-01-10', '2017-07-01', '2017-07-15', 3400, 100);
 INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (2, 3, '2017-01-10', '2017-07-01', '2017-07-15', 400, 50);
 INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (2, 4, '2017-01-10', '2017-07-01', '2017-07-15', 7200, 1800);
-INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (3, 5, '2017-01-10', '2017-07-01', '2017-07-15', 1400, 450);
-INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (4, 6, '2017-01-10', '2017-07-01', '2017-07-15', 2400, 780);
-INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (4, 6, '2017-01-10', '2017-07-01', '2017-07-15', 500, 80);
-INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (4, 1, '2017-01-10', '2017-07-01', '2017-07-15', 40, 0);
+INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (20, 5, '2017-01-10', '2017-06-01', '2017-07-15', 1400, 450);
+INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (20, 6, '2017-01-10', '2017-07-01', '2017-07-15', 2400, 780);
+INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (60, 6, '2017-01-10', '2017-05-01', '2017-07-15', 500, 80);
+INSERT INTO reservation (res_cha_id, res_cli_id, res_date, res_date_debut, res_date_fin, res_prix, res_arrhes) VALUES (60, 1, '2017-01-10', '2017-05-01', '2017-07-15', 40, 0);
 
 /* ----------- LOT 1 -----------------*/
 SELECT hot_nom, hot_ville FROM hotel;
@@ -185,13 +185,22 @@ SELECT COUNT(hot_sta_id) FROM hotel WHERE hot_sta_id = 1;
 SELECT COUNT(hot_sta_id) FROM hotel WHERE hot_sta_id = 2;
 SELECT COUNT(hot_sta_id) FROM hotel WHERE hot_sta_id = 3;
 
+/*1 seul lignes : */
+SELECT hot_sta_id,COUNT(hot_sta_id) FROM hotel GROUP by hot_sta_id;
+
 SELECT COUNT(cha_id) FROM hotel,chambre WHERE hot_sta_id = 1 AND cha_hot_id = hot_id;
 SELECT COUNT(cha_id) FROM hotel,chambre WHERE hot_sta_id = 2 AND cha_hot_id = hot_id;
 SELECT COUNT(cha_id) FROM hotel,chambre WHERE hot_sta_id = 3 AND cha_hot_id = hot_id;
 
+/*1 seul lignes : */
+SELECT hot_sta_id,COUNT(cha_id) FROM hotel,chambre WHERE cha_hot_id = hot_id GROUP by hot_sta_id;
+
 SELECT COUNT(cha_id) FROM hotel,chambre WHERE hot_sta_id = 1 AND cha_hot_id = hot_id AND cha_capacite > 1;
 SELECT COUNT(cha_id) FROM hotel,chambre WHERE hot_sta_id = 2 AND cha_hot_id = hot_id AND cha_capacite > 1;
 SELECT COUNT(cha_id) FROM hotel,chambre WHERE hot_sta_id = 3 AND cha_hot_id = hot_id AND cha_capacite > 1;
+
+/*1 seul lignes : */
+SELECT hot_sta_id,COUNT(cha_id) FROM hotel,chambre WHERE cha_hot_id = hot_id AND cha_capacite > 1 GROUP BY hot_sta_id;
 
 SELECT hot_nom FROM hotel,reservation,chambre,client
 WHERE cli_nom = 'Squire' AND res_cli_id = cli_id AND
@@ -201,4 +210,7 @@ SELECT avg(DATEDIFF(res_date_fin, res_date_debut)) FROM reservation,hotel,chambr
 SELECT avg(DATEDIFF(res_date_fin, res_date_debut)) FROM reservation,hotel,chambre WHERE hot_sta_id = 2 AND res_cha_id = cha_id AND cha_hot_id = hot_id;
 SELECT avg(DATEDIFF(res_date_fin, res_date_debut)) FROM reservation,hotel,chambre WHERE hot_sta_id = 3 AND res_cha_id = cha_id AND cha_hot_id = hot_id;
 
+/* en une seul ligne : */
+
+SELECT hot_sta_id,avg(DATEDIFF(res_date_fin, res_date_debut)) FROM reservation,hotel,chambre  WHERE res_cha_id = cha_id AND cha_hot_id = hot_id  GROUP BY hot_sta_id;
 
