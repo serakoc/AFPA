@@ -225,12 +225,15 @@ SELECT fournis.nomfou,SUM(qte1*prix1+qte2*prix2+qte3*prix3)*1.2 AS 'chiffre d\'a
 UPDATE vente SET prix1 = prix1*1.04,prix2 = prix2 * 1.02 WHERE numfou = 9120;
 
 /*2*/
+
 UPDATE vente SET prix2 = 0 WHERE prix2 = 0;
+
 /*3*/
 
 UPDATE entcom,fournis SET obscom = '******' WHERE satisf < 5;
 
 /*4*/
+
 DELETE FROM vente WHERE codart='I110';
 DELETE FROM produit WHERE codart='I110';
 
