@@ -164,3 +164,78 @@ INSERT INTO `vente` (`codart`, `numfou`, `delliv`, `qte1`, `prix1`, `qte2`, `pri
 	('P250', 9120, 30, 0, 1500, 100, 1400, 500, 1200),
 	('R080', 9120, 10, 0, 120, 100, 100, 0, 0),
 	('R132', 9120, 5, 0, 275, 0, 0, 0, 0);
+SELECT numcom FROM entcom WHERE numfou = 9120;
+
+SELECT numfou,numcom FROM entcom;
+
+SELECT COUNT(numcom) AS 'nombre de commande totale' ,COUNT(distinct numfou) AS 'nbr de fournisseur ayant passé commande' FROM entcom;
+
+SELECT codart,libart,stkphy,stkale,qteann FROM produit WHERE stkphy <= stkale AND qteann <= 1000;
+
+SELECT posfou, nomfou FROM fournis WHERE posfou LIKE '75%' OR posfou LIKE '78%' OR posfou LIKE '92%' OR posfou LIKE '77%' ORDER BY posfou DESC, nomfou;
+
+SELECT numcom FROM entcom WHERE datcom >= 2007-03-01 AND datcom < 2007-05-01;
+
+SELECT numcom,obscom FROM entcom WHERE obscom != "" AND datcom = CURRENT_DATE();
+
+SELECT numcom, (qte1*prix1 + qte2*prix2 + qte3*prix3) AS 'total' FROM entcom JOIN vente on entcom.numfou = vente.numfou ORDER BY total;
+
+SELECT numcom, (qte1*prix1 + qte2*prix2 + qte3*prix3) AS 'total' FROM entcom JOIN vente on entcom.numfou = vente.numfou WHERE (qte1*prix1 + qte2*prix2 + qte3*prix3) > 10000 AND (qte1+qte2+qte3) < 1000 ORDER BY total;
+
+SELECT numcom, datcom, nomfou FROM entcom,fournis WHERE entcom.numfou = fournis.numfou;
+
+SELECT entcom.numcom, nomfou, libart, (qte1*prix1 + qte2*prix2 + qte3*prix3) FROM entcom,fournis,produit,vente,ligcom WHERE obscom LIKE '%urgent%' GROUP BY entcom.numcom;
+
+/* 12 */
+
+SELECT distinct nomfou FROM fournis,entcom WHERE fournis.numfou = entcom.numfou AND (datcom != "" OR datcom IS NOT NULL);
+SELECT distinct nomfou FROM fournis JOIN entcom ON entcom.numfou = fournis.numfou WHERE (datcom != "" OR datcom IS NOT NULL);
+
+/*13*/
+
+SELECT numcom, datcom FROM entcom WHERE numcom = 70210;
+SELECT numcom,datcom FROM entcom GROUP BY numcom HAVING numcom = 70210;
+
+/*14*//*
+
+SELECT libart, prix1 FROM produit,vente,ligcom GROUP BY libart HAVING prix1 < MIN(SELECT libart FROM produit WHERE libart LIKE 'R%');*/
+
+/*15*/
+
+SELECT nomfou,libart FROM fournis,entcom,ligcom,produit WHERE fournis.numfou = entcom.numfou AND (datcom != "" OR datcom IS NOT NULL) AND entcom.numcom = ligcom.numcom AND ligcom.codart = produit.codart AND STKPHY <= STKALE*1.5 ORDER BY libart, nomfou;
+
+/*16*/
+
+SELECT nomfou,libart FROM fournis,entcom,ligcom,produit,vente WHERE fournis.numfou = entcom.numfou AND (datcom != "" OR datcom IS NOT NULL) AND entcom.numcom = ligcom.numcom AND ligcom.codart = produit.codart AND STKPHY <= STKALE*1.5 AND vente.numfou = fournis.numfou AND vente.codart = produit.codart AND delliv > 30 ORDER BY nomfou, libart;
+
+/*17*/
+
+SELECT nomfou, stkphy , libart FROM fournis,vente,produit WHERE fournis.numfou = vente.numfou AND vente.codart = produit.codart GROUP BY stkphy;
+
+/*18*/
+
+SELECT libart FROM produit,vente,ligcom,entcom WHERE (qtecde) > 0.9*qteann AND ligcom.codart = produit.codart and year(entcom.datcom) = '1993' group by libart;
+/*19*/
+SELECT fournis.nomfou,SUM(qte1*prix1+qte2*prix2+qte3*prix3)*1.2 AS 'chiffre d\'affaire' FROM vente,fournis,entcom WHERE fournis.numfou = vente.numfou AND entcom.numfou = fournis.numfou AND YEAR(entcom.datcom) = 1993;
+
+/*------------ besoin maj -------------------*/
+
+/*1*/
+
+UPDATE vente SET prix1 = prix1*1.04,prix2 = prix2 * 1.02 WHERE numfou = 9120;
+
+/*2*/
+
+UPDATE vente SET prix2 = 0 WHERE prix2 = 0;
+
+/*3*/
+
+UPDATE entcom,fournis SET obscom = '******' WHERE satisf < 5;
+
+/*4*/
+
+DELETE FROM vente WHERE codart='I110';
+DELETE FROM produit WHERE codart='I110';
+
+/*5*/
+

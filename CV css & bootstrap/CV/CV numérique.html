@@ -6,24 +6,27 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="asset/css/normalize.css"/>
         <link rel="stylesheet" href="asset/css/cv.css"/>
+        <link rel="stylesheet" href="asset/css/cv_mobile.css"/>
+
         <title>CV numérique</title>
     </head>
     <body>
 
         <header id="header">
-                <hr/>
+            
             <div id="sommaire">
                 <h1>
                     CV NUMERIQUE
                 </h1>  
+                <hr/>
                 <a href="#info" title="lien_vers_info" class="lien_ancrage">INFOS PERSO</a>
                 <a href="#diplome" title="lien_vers_diplome" class="lien_ancrage">MES DIPLÔMES</a>
-                <a href="#exp" title="lien_vers_experience" class="lien_ancrage">MON EXPERIENCE PROFESSIONNEL</a>
+                <a href="#exp" title="lien_vers_experience" class="lien_ancrage">MES EXPERIENCES PROFESSIONNELLES</a>
                 <a href="#competence" title="lien_vers_competence" class="lien_ancrage">MES COMPETENCES</a>
                 <a href="#interet" title="lien_vers_mes_interet" class="lien_ancrage">MES CENTRES D'INTERETS</a>
-            </div>
                 <hr/>
-                
+            </div>
+            <p id="cliquez"> Cliquez pour swiper </p>
         </header>
 
         <section id ="all">
@@ -32,13 +35,13 @@
                     <img src="asset/img/identite.jpg" alt="photo" title="photo" width="200" height="200" id="logo"/> 
                     <div id="adresse">
                         <p>KARAKOC Serhat</p>
-                        <p>2 rue du docteur magnier</p>
-                        <p>BAT N APT 816</p> 
                         <p>60000 Beauvais</p>
                         <a href="mailto:cpserakoc@outlook.fr" title="mail" id="mail">cpserakoc@outlook.fr</a>
                         <p>0781726088</p>     
-                        <a href="https://github.com/serakoc/AFPA" title="lien_projet">Mes Projets <span class="italique">GitHub</span></a>               
+                        <a href="https://github.com/serakoc/AFPA" title="lien_projet">Mes Projets <span class="italique">GitHub</span></a>   
+                                   
                     </div>
+                    <a href="https://dev.amorce.org/skarakoc/CV_bootstrap/CV%20num%c3%a9rique.html" title="lien_projet" style="text-align:center;"> Mon CV numérique sous Bootstrap</a>  
                 </div>
                 <div class="swip">
                     <a href="#diplome" title="lien_vers_diplome" class="logo_scroll">
@@ -54,7 +57,7 @@
                         <li>
                             <fieldset>
                                 <legend>2017</legend>    
-                                <p>Baccalauréat</p>
+                                <p >Baccalauréat Sciences et Techniques de l'Industrie et du Developpement Durable - Spécialité AC</p>
                                 </fieldset> 
                         </li>
                         <li>
@@ -74,16 +77,15 @@
                     </a>
                 </div>
             </div>
-            
             <div id="exp" class="content">
                 <div>
-                    <h3>Mes expèriences professionnels</h3>
+                    <h3 class="text-center">Mes expèriences professionnelles</h3>
                     <ul>
                         <li>
                             <fieldset>
-                                <legend>2018</legend>
-                                <p>Ket 60 - Maçon</p>
-                                <p>Agco SAS - Monteur</p>
+                                <legend>2019 - 2020</legend>
+                                <p>Formation - Techniques de base développement applications - AFPA<p>
+                                <p class="commentaire">(HTML, CSS, JavaScript, PHP, DBB MySQL)</p>
                             </fieldset>
                         </li>
                         <li>
@@ -91,6 +93,13 @@
                                 <legend>2019</legend>
                                 <p>CBI  - Carreleur</p>
                                 <p>EJ - Monteur</p>
+                            </fieldset>
+                        </li>
+                        <li>
+                            <fieldset>
+                                <legend>2018</legend>
+                                <p>Ket 60 - Maçon</p>
+                                <p>Agco SAS - Monteur</p>
                             </fieldset>
                         </li>
                     </ul>
@@ -104,46 +113,51 @@
                     </a>
                 </div>
             </div>
-
             <div id="competence" class="content">
                 <div>
-                    <h3>Mes competences</h3>
+                    <h3 class="text-center">Mes competences</h3>
                     <fieldset>
                         <legend>Programmation</legend>
                         <p>C (niveau de base; concept de pointeur)</p>
                         <div class="progress-bar">
                             <div class="progress" style="width:60%;background-color:#fec800;">
-                                <span>60%</span>
+                                
                             </div> 
                         </div>
                         <p>HTML 5</p>
                         <div class="progress-bar">
                             <div class="progress" style="width:90%;background-color:#119D22;">
-                                <span>90%</span>
+                                
                             </div> 
                         </div>
                         <p>CSS3</p>
                         <div class="progress-bar">
                             <div class="progress" style="width:90%;background-color:#119D22;">
-                                <span>90%</span>
+                                
                             </div> 
                         </div>
                         <p>Responsive Design (CSS, framework Bootstrap)</p>
                         <div class="progress-bar">
                             <div class="progress" style="width:80%;background-color:#00FE1E;">
-                                <span>80%</span>
+                                
                             </div> 
                         </div>
                         <p>Javascript</p>
                         <div class="progress-bar">
                             <div class="progress" style="width:85%;background-color:#15CE2B;">
-                                <span>85%</span>
+                            
+                            </div> 
+                        </div>
+                        <p>SQL</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:70%;background-color:#fec800;">
+                                
                             </div> 
                         </div>
                         <p>PHP</p>
                         <div class="progress-bar">
                             <div class="progress" style="width:80%;background-color:#00FE1E;">
-                                <span>80%</span>
+                                
                             </div> 
                         </div>
                     </fieldset>
@@ -152,13 +166,11 @@
                         <p>Programmation micro-controleur Atmel</p>
                         <div class="progress-bar">
                             <div class="progress" style="width:70%;background-color:#C8F01B;">
-                                <span>70%</span>
                             </div> 
                         </div>
                         <p>Manipulation module Arduino</p>
                         <div class="progress-bar">
                             <div class="progress" style="width:80%;background-color:#00FE1E;">
-                                <span>80%</span>
                             </div> 
                         </div>
                     </fieldset>
@@ -179,18 +191,25 @@
                     <fieldset>
                         <p>Sports</p>
                         <p>Electronique</p>
+                        <p>Explorer de nouveaux domaines et technologies</p>
+                        <p>Bricolage en tout genre</p>
+                        <p>Maitriser ce qui a attrait aux appareils du quotidien</p>
+                        <p class="commentaire">(Comprendre le fonctionnement d'un appareil ou d'une technologie en fait partie)</p>
+                        <p>Domotique</p>
+                        <p class="commentaire">(Objet connecter, module arduino, etc ...)</p>
                     </fieldset>
                 </div>
                 <div>
                     <h3>Contactons-nous !</h3>
+                    <div id="checkErr"></div>
                     <form action="https://formspree.io/xwkpvjbe" method="POST">
-                        <label for="name">Votre Nom : </label>
-                        <input type="text" name="name" id="name"><br/><br/>
-                        <label for="replyto">Email : </label>
-                        <input type="email" name="_replyto"><br/><br/>
-                        <label for="demande">Votre demande : </label>
-                        <textarea name="demande" id="demande"></textarea><br/><br/>
-                        <input type="submit" value="Send">
+                        <label for="name">Votre Nom : </label><br/>
+                        <input type="text" name="name" id="nom" required><br/><br/>
+                        <label for="replyto">Email : </label><br/>
+                        <input type="email" name="_replyto" id="mail" required><br/><br/>
+                        <label for="demande">Votre demande : </label><br/>
+                        <textarea name="demande" id="demande" required></textarea><br/><br/>
+                        <input type="submit" value="Envoyer" id="envoieForm">
                     </form>
                 </div>
                 <div class="swip icone_montant">
@@ -199,7 +218,8 @@
                     </a>
                 </div>
             </div>
-
         </section>
+        <script type="text/javascript" src="asset/js/burger.js"></script>
+        <!--<script type="text/javascript" src="asset/js/verification.js"></script>-->
     </body>
 </html>
