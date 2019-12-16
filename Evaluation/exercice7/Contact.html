@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- head + titre-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/cs/Style.css">
+    <title>Contact</title>
+</head>
+
+<body>
+<!-- header contenant logo et phrase d'accroche (bootstrap) -->
+    <header>
+        <a href="index.html" title="logo accueil"  class=" col-md-6">
+            <img src="Assets/img/images/jarditou_logo.jpg" alt="Logo Jarditou" title="Logo Jarditou" class=" col-md-6"/>
+        </a>
+        <p class="text-center">TOUT LE JARDIN</p>
+    </header>
+ 
+<!-- menu burger désactiver < 768px -->
+    <div id="navb" class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-light p-4">
+                <nav>
+                    <ul>
+                        <a class="color" href="index.html" title="Accueil"><li class="burger">Accueil</li></a>
+                        <a class="color" href="tableau.html" title="Tableau"><li class="burger">Tableau</li></a>
+                        <a class="color" href="Contact.html" title="Contact"><li class="burger">Contact</li></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        </div>
+<!-- menu "" burger "" > 768px -->
+        <nav id="burg">
+            <ul>
+                <li><a href="index.html" title="Accueil">Accueil</a></li>
+                <li><a href="tableau.html" title="Tableau">Tableau</a></li>
+                <li><a href="Contact.html" title="Contact">Contact</a></li>
+            </ul>
+        </nav>
+<!-- image de promotion-->
+    <img src="Assets/img/images/promotion.jpg" alt="promotion" title="promotion" id="promotion" class="img-fluid"/>
+
+    <!-- formulaire de contact avec verification non intrusive js -->
+   <form action="http://bienvu.net/script.php" method="POST" id="formulaire_contact" class="container">
+        <p style="color:red;">* Ces zones sont obligatoires</p>
+
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+            <!-- form-group bootstrap pour div parent au input d'un forumlaire -->
+            <!-- form-control bootstrap pour input text-->
+            <!-- form-check-input/label pour bouton coché (radio/checkbox)-->
+            <!-- miss*** span servant de conteneur pour message d'erreur via js (DOM)-->
+            <div class="form-group">
+                <label for="nom">Votre nom* :</label>
+                <input class="form-control" type="text" name="Votre nom* : " required id="nom"/><br/><span id="missNom"></span><br/>
+                <label for="prenom">Votre prénom* : </label>
+                <input class="form-control" type="text" name="Votre prénom* : " required id="prenom"/><br/><span id="missPrenom"></span><br/>
+                <p>Sexe* :</p>
+                <div class="form-check">
+                    <input class="form-check-input"type="radio" name="Sexe" value="Féminin" required id="fem"/>
+                    <label class="form-check-label"for="fem">Féminin : </label>
+                </div>
+                <div class="form-check">
+                        <input class="form-check-input"type="radio" name="Sexe" value="Masculin" required id="mas"/>
+                        <label class="form-check-label"for="mas">Masculin : </label>
+                </div><br/>
+                <span id="missSexe"></span><br/>
+                <label for="naissance">Date Naissance* :</label>
+                <input class="form-control"type="date" name="Date Naissance" required id="naissance"/><br/>
+                <label for="postal">Code postal : </label>
+                <input class="form-control"type="text" name="postal" id="postal"/><br/>
+                <label for="adresse">Adresse : </label>
+                <input class="form-control"type="text" name="adresse" id="adresse"/><br/>
+                <label for="ville">Ville :</label> 
+                <input class="form-control"type="text" name="ville" id="ville"/><br/>
+                <label for="email">Email* : </label>
+                <input class="form-control"type="text" name="email" required placeholder="email" id="email"/><br/> <span id="missEmail"></span><br/>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <div class="form-group">
+                <legend>Votre demande</legend>
+                <label for="sujet">Sujet* : </label>
+                    <select class="form-control" name="sujet" required id="sujet">
+                        <option value="" selected> - </option>    
+                        <option value="1"> option 1 </option>
+                        <option value="2"> option 2 </option>
+                    </select><br/>
+                <label for="demande">Votre demande* :</label>
+                <textarea name="demande" required id="demande" rows="1"></textarea><br/><span id="missDemande"></span><br/>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="confirmation" required id="confirmation">
+                <label class="form-check-label"for="confirmation">J'accepte le traitement informatique de ce forumlaire.</label>
+          </div>
+            <input class="btn" type="submit" id="bouton" value="Envoyer"/>
+            <input class="btn" type="reset" value="Annuler"/>
+        </div>
+   </form>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="Mentions légales.html" title="Mentions légales">Mentions légales</a></li>
+                <li><a href="Horaires.html" title="Horaires">Horaires</a></li>
+                <li><a href="Plan du site.html" title="Plan du site">Plan du site</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <!-- 3script bootstrap servant a son fonctionnement, popper est facultatif-->
+    <!-- contaxt.js servant a la vérification du form avant son envoie-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+       
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="Assets/js/contaxt.js"></script>
+</body>
+</html>
