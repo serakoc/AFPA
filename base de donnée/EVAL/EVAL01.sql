@@ -41,4 +41,4 @@ FOREIGN KEY (pro_num) REFERENCES produit(pro_num),
 PRIMARY KEY (com_num,pro_num)
 );
 
-CREATE INDEX index_nom ON CLIENT(nom);
+CREATE INDEX index_nom ON CLIENT(cli_nom);
