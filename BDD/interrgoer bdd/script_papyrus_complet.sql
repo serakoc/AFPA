@@ -1,4 +1,4 @@
-DROP DATABASE papyrus;
+
 
 CREATE DATABASE papyrus;
 
