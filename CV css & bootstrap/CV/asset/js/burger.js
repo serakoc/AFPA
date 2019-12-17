@@ -1,7 +1,5 @@
-var reload = false;
-
-if (window.innerWidth <= 460)
-{	
+if (window.innerWidth <= 405)
+{
 	var sommaire = document.getElementById('sommaire');
 	var header = document.getElementById('header');
 	var content = document.getElementsByClassName('content')
@@ -16,7 +14,7 @@ if (window.innerWidth <= 460)
 			{
 				content[i].style.paddingTop =  "70px";
 			}
-			header.style.background = "brown";
+			header.style.background = "grey";
 			cliquez.style.display = "block";
 		}
 
@@ -34,8 +32,4 @@ if (window.innerWidth <= 460)
 		condition *= -1;
 
 	});
-}
-else
-{
-	console.log("test");
 }

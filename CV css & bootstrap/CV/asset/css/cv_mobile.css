@@ -1,4 +1,4 @@
-@media all and (max-width:460px)
+@media all and (max-width:405px)
 {
     body
     {
@@ -16,18 +16,14 @@
     {
         display:block;
     }
-    #info
-    {
-        margin-top:70px;
-    }
     header
     {
-        background:brown;
+        background:grey;
         height:30px;
         position: fixed;
         padding:0px;
         margin:0px;
-        padding-top : 30px;
+        padding-top:30px;
         margin-left : -10px;
         width: 100vw;
         box-shadow:none;
@@ -51,16 +47,12 @@
         color:black;
 
     }
-    #competence
-    {
-        margin-bottom : 120px;
-    }
     .content
     {
         padding:0;
         margin:0;
-        min-height: 610px;
-
+        height : auto
+        padding-top:100px;
     }
     #all
     {
@@ -80,8 +72,6 @@
     #sommaire
     {
         display:none;
-        margin-top:100px;
+       padding-top:100px;
         background:white;
-    }
-
-}
+    } #competence {min-height : 150px;} #adresse_photo{padding-top : 70px;}}
