@@ -2,9 +2,9 @@
 function connectionBase()
 {
     $host = "localhost";
-    $login = "skarakoc";
-    $password = "19141sk";
-    $base = "skarakoc";
+    $login = "root";
+    $password = "";
+    $base = "jarditou";
 
     try
     {
