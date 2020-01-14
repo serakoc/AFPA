@@ -14,7 +14,7 @@
     $block = $_POST['block'];
 
     $valide=false;
-  
+
     if (empty($ref) || !preg_match("#^[a-zA-Z_\-0-9]{2,20}$#",$ref))
     {
         echo "<p>Seulement des lettres et chiffres. (symbole autorisé : -_). 2-20 caracteres.</p>";
@@ -33,18 +33,18 @@
         $valide = true;
     }
 
-    if (empty($prix) || !preg_match("#^[0-9]$#",$prix))
+    if (empty($prix) || !preg_match("#^[0-9\.]+$#",$prix))
     {
-        echo "<p>seulement des chiffres !</p>";
+        echo "<p>prix : seulement des chiffres !</p>";
     }
     else
     {
         $valide = true;
     }
 
-    if (empty($stock) || !preg_match("#^[0-9]$#",$stock))
+    if (empty($stock) || !preg_match("#^[0-9]+$#",$stock))
     {
-        echo "<p>seulement des chiffres !</p>";
+        echo "<p>stock : seulement des chiffres !</p>";
     }
     else
     {
@@ -60,7 +60,7 @@
         $valide = true;
     }
 
-    if($valide)
+    if($valide == true)
     {
         if ($block == "oui")
         {
@@ -74,7 +74,7 @@
 
         $requete = $db->prepare("UPDATE produits 
         SET pro_cat_id=:cat_id, pro_ref=:ref, pro_libelle=:lib, pro_description = :desc,pro_prix=:prix,pro_stock=:stock,pro_d_modif=:modif,pro_couleur = :couleur,pro_bloque=:bloque
-        where pro_id = $pro_id");
+        WHERE pro_id = $pro_id");
 
         $requete->bindValue(':cat_id',$cat_id,PDO::PARAM_INT);
         $requete->bindValue(':ref',$ref);
@@ -86,8 +86,9 @@
         $requete->bindValue(':couleur',$couleur);
         $requete->bindValue(':bloque',$block,PDO::PARAM_INT);
 
-        $requete->execute();
+       	$requete->execute();
         header('Location:../view/tableau.php');
+	
     }
 
 ?>

@@ -2,8 +2,8 @@
 function connectionBase()
 {
     $host = "localhost";
-    $login = "root";
-    $password = "";
+    $login = "test";
+    $password = "test";
     $base = "jarditou";
 
     try

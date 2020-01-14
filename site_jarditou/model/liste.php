@@ -38,7 +38,7 @@
 
         echo "<td style=\"border:1px solid black\">$tab->pro_cat_id</td>";
 
-        echo "<td style='border:1px solid black'> <a class='no' href=\"../view/modif.php?id=$tab->pro_id&ref=$tab->pro_ref&lib=$tab->pro_libelle&prix=$tab->pro_prix&stock=$tab->pro_stock&cat_id=$tab->pro_cat_id&couleur=$tab->pro_couleur&desc=$tab->pro_description&ajout=$tab->pro_d_ajout&modif=". date("Y-m-d") ."&src=$tab->pro_id.$tab->pro_photo&block=$tab->pro_bloque\">$tab->pro_libelle</a></td>";
+        echo "<td style='border:1px solid black'> <a class='no' href=\"../view/modif.php?id=$tab->pro_id&cat=$tab->pro_cat_id&ref=$tab->pro_ref&lib=$tab->pro_libelle&prix=$tab->pro_prix&stock=$tab->pro_stock&cat_id=$tab->pro_cat_id&couleur=$tab->pro_couleur&desc=$tab->pro_description&ajout=$tab->pro_d_ajout&modif=". date("Y-m-d") ."&src=$tab->pro_id.$tab->pro_photo&block=$tab->pro_bloque\">$tab->pro_libelle</a></td>";
 
         echo "<td style=\"border:1px solid black\">$tab->pro_prix</td>";
 

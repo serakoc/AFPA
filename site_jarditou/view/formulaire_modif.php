@@ -24,26 +24,29 @@
         <?php
             require('../model/connexion_bdd.php');
             $db = connectionBase();
+            $cat = $_GET["cat"];
             $requete = $db->prepare("SELECT * FROM categories");
             $requete->execute();
 
             while($fetcheur = $requete->fetch())
             {
-                echo "<option value=\"$fetcheur->cat_id\">$fetcheur->cat_nom";
+                if ($fetcheur->cat_id == $cat)
+                    echo "<option value=\"$fetcheur->cat_id\" selected='selected'>$fetcheur->cat_nom";
+                else
+                    echo "<option value=\"$fetcheur->cat_id\">$fetcheur->cat_nom";
             }
         ?>
     </Select><br/>
     
     <label for='desc'>Description :</label><br>
-    <textarea id='desc' name='desc' value="
-    <?php
+
+    <textarea id='desc' name='desc' value="<?php
         $requete = $db->prepare("SELECT pro_description FROM produits WHERE pro_id = :id");
         $requete->bindValue(':id',$_GET["id"]);
         $requete->execute();
         $description = $requete->fetch();
         echo $description->pro_description;
-    ?>"
-    >
+    ?>">
     <?php echo "$description->pro_description"; ?>
     </textarea><br/>
 
@@ -65,10 +68,10 @@
     <br/>
     
     <label for='id'>Date d'ajout : *</label>
-    <input type="text" id='id' name='id' value="<?php echo $_GET["ajout"] ?>"readonly><br/>
+    <input type="text" id='id' name='ajout' value="<?php echo $_GET["ajout"] ?>"readonly><br/>
 
     <label for='id'>Date de modification : *</label>
-    <input type="text" id='id' name='id' value="<?php echo $_GET["modif"] ?>"readonly><br/>
+    <input type="text" id='id' name='modif' value="<?php echo $_GET["modif"] ?>"readonly><br/>
 
     <p>Bloqué : </p>
     <input type="radio" id='y' name='block' value="oui" <?php if($_GET['block']) echo "checked=\"checked\"";?>>
