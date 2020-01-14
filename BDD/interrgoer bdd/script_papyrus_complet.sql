@@ -1,4 +1,4 @@
-
+DROP DATABASE if EXISTS papyrus;
 
 CREATE DATABASE papyrus;
 

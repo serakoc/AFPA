@@ -3285,29 +3285,66 @@ INSERT INTO `order details` (`OrderID`, `ProductID`, `UnitPrice`, `Quantity`, `D
 	(11077, 73, 15.0000, 2, 0),
 	(11077, 75, 7.7500, 4, 0),
 	(11077, 77, 13.0000, 2, 0);
+	
 
+SELECT CompanyName 
+AS 'Société', ContactName AS 'Contact', ContactTitle AS 'Fonction  du contact', phone AS 'Télephone' 
+FROM suppliers 
+WHERE country = 'France';
 
-SELECT CompanyName AS 'Société', ContactName AS 'Contact', ContactTitle AS 'Fonction  du contact', phone AS 'Télephone' FROM suppliers WHERE country = 'France';
+SELECT ProductName AS 'Produit', unitPrice AS 'Prix' 
+FROM products 
+WHERE supplierID = 1;
 
-SELECT ProductName AS 'Produit', unitPrice AS 'Prix' FROM products WHERE supplierID = 1;
+SELECT CompanyName AS 'Fournisseur', COUNT(productname) AS 'Nbr' 
+FROM suppliers 
+inner JOIN products ON suppliers.SupplierID = products.supplierID 
+WHERE country = 'France' 
+GROUP BY companyname
+ORDER BY COUNT(productname) DESC;
 
-SELECT CompanyName AS 'Fournisseur',COUNT(productname) AS 'Nbr' FROM suppliers,products WHERE country = 'France' AND suppliers.SupplierID = products.supplierid GROUP BY companyname ORDER BY COUNT(productname) DESC;
+SELECT Customers.CompanyName AS 'client', COUNT(orderid) AS 'nbre' 
+FROM customers
+INNER JOIN orders ON customers.CustomerID = orders.CustomerID
+WHERE  Customers.country = 'France' 
+GROUP by CompanyName
+HAVING count(orderid) > 10 ;
 
-SELECT companyname AS 'client', COUNT(orderid) AS ' nbre' FROM customers,orders WHERE customers.CustomerID = orders.customerid and country = 'France' GROUP BY companyname HAVING count(orderid)>10 ;
+SELECT
+`customers`.`CompanyName` AS `Client`,
+SUM(`order details`.`UnitPrice` * `order details`.`Quantity`) as `CA`,
+`customers`.`Country` AS `Pays`
+FROM ((`customers`
+INNER JOIN `orders` ON `orders`.`CustomerID` = `customers`.`CustomerID`)
+INNER JOIN `order details` ON `order details`.`OrderID` = `orders`.`OrderID`)
+GROUP BY `customers`.`CustomerID`
+HAVING `CA` > 30000
+ORDER BY `CA` DESC;
 
-SELECT companyname AS 'client', SUM(unitprice * quantity) AS 'CA', country AS 'pays'  FROM customers,orders,`order details` WHERE customers.CustomerID = orders.customerid and orders.OrderID = `order details`.orderid GROUP BY companyname HAVING SUM(unitprice * quantity) > 30000 ORDER BY CA DESC;
-
-SELECT customers.country AS 'pays' FROM customers,orders,`order details`, products, suppliers
-WHERE customers.CustomerID = orders.CustomerID AND orders.orderid = `order details`.orderid AND `order details`.productid = products.ProductID AND products.SupplierID = suppliers.supplierid AND suppliers.supplierid = 1
+SELECT customers.country AS 'pays' 
+FROM customers
+INNER JOIN orders ON customers.CustomerID = orders.CustomerID
+INNER JOIN `order details` ON orders.orderid = `order details`.orderid
+INNER JOIN products ON `order details`.productid = products.ProductID
+INNER JOIN suppliers ON products.SupplierID = suppliers.supplierid
+WHERE suppliers.supplierid = 1
 GROUP BY customers.country;
 
-SELECT SUM(unitprice * quantity) AS 'montant 97' FROM orders, `order details`
-WHERE orders.OrderID = `order details`.orderid AND YEAR(orderdate) = 1997;
+SELECT SUM(unitprice * quantity) AS 'montant 97' 
+FROM orders
+INNER JOIN `order details`ON orders.OrderID = `order details`.orderid
+WHERE YEAR(orderdate) = 1997;
 
-SELECT month(orderdate) AS 'mois 97', SUM(unitprice * quantity) AS 'montant vente 97' FROM orders, `order details`
-WHERE orders.OrderID = `order details`.orderid AND YEAR(orderdate) = 1997
+SELECT month(orderdate) AS 'mois 97', SUM(unitprice * quantity) AS 'montant vente 97' 
+FROM orders
+INNER JOIN `order details` ON orders.OrderID = `order details`.orderid
+WHERE YEAR(orderdate) = 1997
 GROUP BY MONTH(orderdate);
 
-SELECT max(orderdate) FROM orders,customers WHERE companyname = 'Du monde entier' AND customers.CustomerID = orders.CustomerID;
+SELECT max(orderdate) 
+FROM orders
+INNER JOIN customers ON customers.CustomerID = orders.CustomerID
+WHERE companyname = 'Du monde entier';
 
-SELECT round(AVG(datediff(shippeddate, orderdate))) FROM orders;
+SELECT round(AVG(datediff(shippeddate, orderdate))) 
+FROM orders;
