@@ -1,5 +1,6 @@
 <h3 style="margin-left: 60px;">FORMULAIRE DE DETAIL </h3>
-<form action="../model/modif.php" method="POST" style="margin : 30px;">
+
+<form action="../model/verif_and_modif.php" method="POST" style="margin : 30px;">
 
     <img src='../public/jarditou_photos/<?php echo $_GET['src']?>' width="150" height="150"><br/>
 

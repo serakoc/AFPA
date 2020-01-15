@@ -31,7 +31,7 @@
     if ($valide)
     {
         echo '<p> VOTRE FORMULAIRE DE CONTACT A été ENVOYER ! </p>';
-        //echo '<p> REDIRECTION PAGE ACCUEIL (3 secondes) </p>';
-        //header("Refresh : 3; url:http://localhost/site_jarditou/view/index.html");
+        echo '<p> REDIRECTION PAGE ACCUEIL (3 secondes) </p>';
+        header("Refresh:3; url:http://localhost/site_jarditou/view/index.html");
     }
 ?>

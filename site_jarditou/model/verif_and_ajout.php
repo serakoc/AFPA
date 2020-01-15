@@ -103,7 +103,7 @@
         $result = $requete_ajout->execute();
 
         /*var_dump($result);*/
-        require('../controller/php/verif_img.php');
+        require('verif_and_ajout_img.php');
         header("Location:../view/tableau.php");
     }
     else

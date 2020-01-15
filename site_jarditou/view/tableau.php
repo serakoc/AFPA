@@ -53,7 +53,7 @@
         <?php
             require("../model/liste.php");
         ?>
-    <a href="ajout.php"><input style="margin-left:50px" type="button" value="ajouter"></a><br/>    
+    <a href="page_d_ajout.php"><input style="margin-left:50px" type="button" value="ajouter"></a><br/>    
     <footer>
         <nav>
             <ul>

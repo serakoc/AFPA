@@ -1,6 +1,6 @@
 <h3 style="margin-left: 60px;">FORMULAIRE D'AJOUT</h3>
 
-<form action="../model/verif_ajout_sql.php" method="POST" enctype="multipart/form-data" style="margin : 30px;" >
+<form action="../model/verif_and_ajout.php" method="POST" enctype="multipart/form-data" style="margin : 30px;" >
     
     <label for='photo'>Photo : </label>
     <input type='file' name='img' id='photo'/>
